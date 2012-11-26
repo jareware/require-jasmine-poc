@@ -1,7 +1,13 @@
-function Song() {
-}
+define([ 'src/Player' ], function(Player) {
 
-Song.prototype.persistFavoriteStatus = function(value) {
-  // something complicated
-  throw new Error("not yet implemented");
-};
+    function Song() {}
+
+    Song.prototype.getPlayerForThisSong = function() {
+        var p = new Player();
+        p.play(this);
+        return p;
+    };
+
+    return Song;
+
+});
