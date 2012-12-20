@@ -2,13 +2,11 @@ define([ 'src/Song' ], function(Song) {
 
     describe('Song', function() {
 
-        it('gives us a player instance', function() {
+        it('allows setting a title', function() {
 
-            var s = new Song();
-            var p = s.getPlayerForThisSong();
+            var s = new Song('The Sound of Silence');
 
-            expect(p.isPlaying).toBeTruthy();
-            expect(p.currentlyPlayingSong).toBe(s);
+            expect(s.title).toEqual('The Sound of Silence');
 
         });
 

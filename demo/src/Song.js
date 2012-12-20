@@ -1,12 +1,8 @@
-define([ 'src/Player' ], function(Player) {
+define([], function() {
 
-    function Song() {}
-
-    Song.prototype.getPlayerForThisSong = function() {
-        var p = new Player();
-        p.play(this);
-        return p;
-    };
+    function Song(title) {
+        this.title = title;
+    }
 
     return Song;
 
