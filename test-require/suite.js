@@ -1,4 +1,4 @@
-define([ 'lib/jasmine-runner' ], function(runner) {
+define([ '../lib/jasmine-runner' ], function(runner) {
 
     require([
         'spec/PlayerSpec',
