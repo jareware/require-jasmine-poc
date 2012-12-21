@@ -25,25 +25,24 @@ define([ 'src/Player', 'test-utils' ], function(Player, testUtils) {
 
         it('allows mocking dependencies', function() {
 
+            var Player;
             var localRequire = testUtils.createRequireContext({
                 'src/Song': function(title) {
                     this.title = 'Mocked: ' + title;
                 }
             });
 
-            var LocalPlayer;
-
             localRequire([ 'src/Player' ], function(PlayerWithFakeDependencies) {
-                LocalPlayer = PlayerWithFakeDependencies;
+                Player = PlayerWithFakeDependencies;
             });
 
             waitsFor(function() {
-                return !!LocalPlayer;
+                return !!Player;
             });
 
             runs(function() {
 
-                var p = new LocalPlayer();
+                var p = new Player();
 
                 p.playDefaultSong();
 
