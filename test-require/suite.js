@@ -1,8 +1,8 @@
-define([ '../lib/jasmine-runner' ], function(runner) {
+define([ 'jasmine-runner' ], function(jasmineRunner) {
 
     require([
         'spec/PlayerSpec',
         'spec/SongSpec'
-    ], runner);
+    ], jasmineRunner);
 
 });
